@@ -1,27 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using GLLibrary;
-
-using NativeDisplayType = System.IntPtr;
-using NativeWindowType = System.IntPtr;
-using NativePixmapType = System.IntPtr;
-
-using EGLNativeDisplayType = System.IntPtr;
-using EGLNativePixmapType = System.IntPtr;
 using EGLNativeWindowType = System.IntPtr;
 
 using EGLint = System.Int32;
-using EGLuint = System.UInt32;
 using EGLBoolean = System.UInt32;
-using EGLenum = System.Int32;
 using EGLConfig = System.IntPtr;
 using EGLContext = System.IntPtr;
 using EGLDisplay = System.IntPtr;
 using EGLSurface = System.IntPtr;
-using EGLClientBuffer = System.IntPtr;
 using System.Diagnostics;
 
 namespace E3DEngine
