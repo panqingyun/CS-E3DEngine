@@ -1,7 +1,8 @@
-﻿using System;
+﻿#if __WIN32__
+using System;
 using GLLibrary;
-using EGLNativeWindowType = System.IntPtr;
 
+using EGLNativeWindowType = System.IntPtr;
 using EGLint = System.Int32;
 using EGLBoolean = System.UInt32;
 using EGLConfig = System.IntPtr;
@@ -121,3 +122,4 @@ namespace E3DEngine
 
     }
 }
+#endif

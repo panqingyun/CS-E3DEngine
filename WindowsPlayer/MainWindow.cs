@@ -3,6 +3,7 @@ using GLLibrary;
 using System;
 using System.Windows.Forms;
 
+
 namespace CSPlayer
 {
     public partial class MainWindow : Form
@@ -22,12 +23,12 @@ namespace CSPlayer
         private void timer1_Tick(object sender, EventArgs e)
         {
             glContext.UseContext();
-            gl2.glBindFramebuffer(gl2.GL_FRAMEBUFFER, 0);
-            gl2.glViewport(0, 0, this.RenderPanel.Width, this.RenderPanel.Height);
-            gl2.glClearColor(0, 0, 1, 0);
-            gl2.glClear(gl2.GL_COLOR_BUFFER_BIT | gl2.GL_DEPTH_BUFFER_BIT | gl2.GL_STENCIL_BUFFER_BIT);
+            gl2.BindFramebuffer(gl2.GL_FRAMEBUFFER, 0);
+            gl2.Viewport(0, 0, this.RenderPanel.Width, this.RenderPanel.Height);
+            gl2.ClearColor(0, 0, 1, 0);
+            gl2.Clear(gl2.GL_COLOR_BUFFER_BIT | gl2.GL_DEPTH_BUFFER_BIT | gl2.GL_STENCIL_BUFFER_BIT);
             glContext.SwapBuffer();
-            gl2.glFlush();
+            gl2.Flush();
         }
     }
 }
