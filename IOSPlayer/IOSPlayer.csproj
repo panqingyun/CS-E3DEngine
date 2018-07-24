@@ -108,5 +108,11 @@
   <ItemGroup>
     <Content Include="Entitlements.plist" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\E3DEngine\EngineCore\EngineCore.csproj">
+      <Project>{b6ac7a66-6fd8-4476-9d8f-80b2cd472947}</Project>
+      <Name>EngineCore</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GLLibrary
+namespace OpenGL.ES20
 {
     class gl2platform
     {

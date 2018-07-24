@@ -16,7 +16,7 @@ public delegate GLboolean GL_PROC_ENUM_FUNCTION(GLenum target);
 public delegate GLboolean GL_PROC_2ENUM_FUNCTION(GLenum target, GLenum pname);
 public delegate GLboolean GL_PROC_2ENUM_PARM_FUNCTION(GLenum target, GLenum pname, ref IntPtr param);
 
-namespace GLLibrary
+namespace OpenGL.ES20
 {
     class gl2ext
     {

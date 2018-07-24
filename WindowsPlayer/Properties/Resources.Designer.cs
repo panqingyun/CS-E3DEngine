@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CSPlayer.Properties
+namespace WindowsPlayer.Properties
 {
 
 

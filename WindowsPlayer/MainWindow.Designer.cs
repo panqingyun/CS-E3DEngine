@@ -1,4 +1,4 @@
-﻿namespace CSPlayer
+﻿namespace WindowsPlayer
 {
     partial class MainWindow
     {
@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.RenderPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // timer1
@@ -39,22 +38,11 @@
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // RenderPanel
-            // 
-            this.RenderPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.RenderPanel.Location = new System.Drawing.Point(213, 41);
-            this.RenderPanel.Name = "RenderPanel";
-            this.RenderPanel.Size = new System.Drawing.Size(824, 717);
-            this.RenderPanel.TabIndex = 0;
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1211, 756);
-            this.Controls.Add(this.RenderPanel);
             this.Name = "MainWindow";
             this.Text = "E3D";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -65,7 +53,6 @@
         #endregion
 
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Panel RenderPanel;
     }
 }
 

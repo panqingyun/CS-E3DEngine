@@ -1,14 +1,15 @@
-﻿using E3DEngine;
-using GLLibrary;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using E3DEngineRenderSystem;
+using E3DEngine;
+using WindowsGL;
 
-
-namespace CSPlayer
+namespace WindowsPlayer
 {
     public partial class MainWindow : Form
     {
         private GLContext glContext = new GLContext();
+        private GLESRenderSystem renderSystem = new GLESRenderSystem();
 
         public MainWindow()
         {
@@ -17,18 +18,17 @@ namespace CSPlayer
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            glContext.InitGLES(this.RenderPanel.Handle);
+            glContext.InitGLES(this.Handle);
+            EngineDelegate.Instance.RenderSystem = renderSystem;
+            renderSystem.ViewportHeight = this.Height;
+            renderSystem.ViewportWidth = this.Width;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             glContext.UseContext();
-            gl2.BindFramebuffer(gl2.GL_FRAMEBUFFER, 0);
-            gl2.Viewport(0, 0, this.RenderPanel.Width, this.RenderPanel.Height);
-            gl2.ClearColor(0, 0, 1, 0);
-            gl2.Clear(gl2.GL_COLOR_BUFFER_BIT | gl2.GL_DEPTH_BUFFER_BIT | gl2.GL_STENCIL_BUFFER_BIT);
+            renderSystem.Update(this.timer1.Interval / 1000.0f);
             glContext.SwapBuffer();
-            gl2.Flush();
         }
     }
 }

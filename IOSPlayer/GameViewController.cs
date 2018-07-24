@@ -100,7 +100,6 @@ namespace IOSPlayer
 #if ENABLE_TEST_CLOUD
 			Xamarin.Calabash.Start();
 #endif
-
             context = new EAGLContext(EAGLRenderingAPI.OpenGLES2);
 
             if (context == null)

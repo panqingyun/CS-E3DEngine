@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("EngineCore")]
+[assembly: AssemblyTitle("IOSGLImporter")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("EngineCore")]
+[assembly: AssemblyProduct("IOSGLImporter")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("b6ac7a66-6fd8-4476-9d8f-80b2cd472947")]
+[assembly: Guid("b415b09a-6d4a-4527-b40d-b9f0ef49654c")]
 
 // 程序集的版本信息由下列四个值组成: 
 //

@@ -88,9 +88,17 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\E3DEngine\GLLibrary\GLLibrary.csproj">
-      <Project>{2b6f67e1-43ac-4708-bebd-193826561fea}</Project>
-      <Name>GLLibrary</Name>
+    <ProjectReference Include="..\E3DEngine\E3DInterface\E3DInterface.csproj">
+      <Project>{1c36bb7d-31b7-4872-b61b-753f9003c16b}</Project>
+      <Name>E3DInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\E3DEngine\EngineCore\EngineCore.csproj">
+      <Project>{b6ac7a66-6fd8-4476-9d8f-80b2cd472947}</Project>
+      <Name>EngineCore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\E3DEngine\RenderSystem\RenderSystem.csproj">
+      <Project>{A50AE244-E50D-4073-A069-E4A606B62218}</Project>
+      <Name>RenderSystem</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

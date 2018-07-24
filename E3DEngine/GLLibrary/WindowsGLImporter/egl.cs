@@ -22,13 +22,11 @@ using EGLSurface = System.IntPtr;
 using EGLClientBuffer = System.IntPtr;
 using System.Runtime.InteropServices;
 
-namespace GLLibrary
+namespace OpenGL.EGL
 {
-    public class egl
+    public class EGL
     {
-#if WIN32
         private const string eglDllName = "libEGL.dll";
-#endif
 
         public const int EGL_VERSION_1_0 = 1;
         public const int EGL_VERSION_1_1 = 1;

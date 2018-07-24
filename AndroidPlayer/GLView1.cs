@@ -7,11 +7,13 @@ using OpenTK.Platform.Android;
 using Android.Views;
 using Android.Content;
 using Android.Util;
+using E3DEngineRenderSystem;
 
 namespace AndroidPlayer
 {
     class PlayerGLView : AndroidGameView
     {
+        private GLESRenderSystem renderSystem = new GLESRenderSystem();
         public PlayerGLView(Context context) : base(context)
         {
         }
@@ -23,6 +25,9 @@ namespace AndroidPlayer
 
             // Run the render loop
             Run();
+            renderSystem.ViewportWidth = this.Width;
+            renderSystem.ViewportHeight = this.Height;
+            E3DEngine.EngineDelegate.Instance.RenderSystem = renderSystem;
         }
 
         // This method is called everytime the context needs
@@ -35,6 +40,7 @@ namespace AndroidPlayer
         protected override void CreateFrameBuffer()
         {
             // the default GraphicsMode that is set consists of (16, 16, 0, 0, 2, false)
+            
             try
             {
                 Log.Verbose("GLCube", "Loading with default settings");
@@ -70,9 +76,7 @@ namespace AndroidPlayer
         protected override void OnRenderFrame(FrameEventArgs e)
         {
             base.OnRenderFrame(e);
-            GL.ClearColor(0.5f, 0.5f, 0.5f, 1.0f);
-            GL.Clear((uint)All.ColorBufferBit);            
-
+            renderSystem.Update(0.02f);
             SwapBuffers();
         }
     }
