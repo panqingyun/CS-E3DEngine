@@ -7,8 +7,8 @@
     <ProjectGuid>{1C36BB7D-31B7-4872-B61B-753F9003C16B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>E3DEngineInterface</RootNamespace>
-    <AssemblyName>E3DEngineInterface</AssemblyName>
+    <RootNamespace>E3DEngineCommon</RootNamespace>
+    <AssemblyName>E3DEngineCommon</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,8 +41,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="E3DRenderSystem.cs" />
+    <Compile Include="IManager.cs" />
     <Compile Include="IOpenGLImporter.cs" />
+    <Compile Include="ISystem.cs" />
+    <Compile Include="MaterialManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PubInterface.cs" />
+    <Compile Include="RendererManager.cs" />
+    <Compile Include="TextureDataManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

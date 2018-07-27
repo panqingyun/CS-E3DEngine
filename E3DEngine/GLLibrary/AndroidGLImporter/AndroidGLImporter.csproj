@@ -47,9 +47,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\E3DInterface\E3DInterface.csproj">
+    <ProjectReference Include="..\..\E3DInterface\E3DCommon.csproj">
       <Project>{1c36bb7d-31b7-4872-b61b-753f9003c16b}</Project>
-      <Name>E3DInterface</Name>
+      <Name>E3DCommon</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

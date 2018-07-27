@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using OpenGL.ES20;
 
 using GLboolean = System.Byte;
-using E3DEngineInterface;
+using E3DEngineCommon;
 
 namespace WindowsGL
 {
@@ -109,7 +109,7 @@ namespace WindowsGL
 
         public void ColorMask(bool red, bool green, bool blue, bool alpha)
         {
-            GL.ColorMask(red ? GL2.GL_TRUE : GL2.GL_FALSE, green ? GL2.GL_TRUE : GL2.GL_FALSE, blue ? GL2.GL_TRUE : GL2.GL_FALSE, alpha ? GL2.GL_TRUE : GL2.GL_FALSE);
+            GL.ColorMask(red ? (byte)1 : (byte)0, green ? (byte)1 : (byte)0, blue ? (byte)1 : (byte)0, alpha ? (byte)1 : (byte)0);
         }
 
         public void CompileShader(uint shader)

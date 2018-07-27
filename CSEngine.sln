@@ -26,7 +26,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngineCore", "E3DEngine\Eng
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenderSystem", "E3DEngine\RenderSystem\RenderSystem.csproj", "{A50AE244-E50D-4073-A069-E4A606B62218}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E3DInterface", "E3DEngine\E3DInterface\E3DInterface.csproj", "{1C36BB7D-31B7-4872-B61B-753F9003C16B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E3DCommon", "E3DEngine\E3DInterface\E3DCommon.csproj", "{1C36BB7D-31B7-4872-B61B-753F9003C16B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidGLImporter", "E3DEngine\GLLibrary\AndroidGLImporter\AndroidGLImporter.csproj", "{48908916-A1F6-4156-B197-B4B88B7FAF98}"
 EndProject

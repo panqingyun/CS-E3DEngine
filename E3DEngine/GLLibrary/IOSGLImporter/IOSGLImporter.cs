@@ -9,7 +9,7 @@ using GLboolean = System.Byte;
 
 namespace IOSGL
 {
-    public class IOSGLImporter : E3DEngineInterface.IOpenGLImporter
+    public class IOSGLImporter : E3DEngineCommon.IOpenGLImporter
     {
         public void ActiveTexture(uint texture)
         {
@@ -188,7 +188,7 @@ namespace IOSGL
 
         public void DepthMask(byte flag)
         {
-            GL.DepthMask(flag == E3DEngineInterface.GL2.GL_TRUE);
+            GL.DepthMask(flag == 1);
         }
 
         public void DepthRange(float zNear, float zFar)
@@ -419,7 +419,7 @@ namespace IOSGL
             bool[] parms = new bool[param.Length];
             for (int i = 0; i < param.Length; i++)
             {
-                parms[i] = param[i] == E3DEngineInterface.GL2.GL_TRUE;
+                parms[i] = param[i] == 1;
             }
             GL.GetBoolean((GetPName)pname, parms);
         }
@@ -608,37 +608,37 @@ namespace IOSGL
 
         public GLboolean IsBuffer(uint buffer)
         {
-            return GL.IsBuffer(buffer) ? E3DEngineInterface.GL2.GL_TRUE : E3DEngineInterface.GL2.GL_FALSE;
+            return GL.IsBuffer(buffer) ? (GLboolean)1 : (GLboolean)0;
         }
 
         public GLboolean IsEnabled(uint cap)
         {
-            return GL.IsEnabled((EnableCap)cap) ? E3DEngineInterface.GL2.GL_TRUE : E3DEngineInterface.GL2.GL_FALSE;
+            return GL.IsEnabled((EnableCap)cap) ? (GLboolean)1 : (GLboolean)0;
         }
 
         public GLboolean IsFramebuffer(uint framebuffer)
         {
-            return GL.IsFramebuffer(framebuffer) ? E3DEngineInterface.GL2.GL_TRUE : E3DEngineInterface.GL2.GL_FALSE;
+            return GL.IsFramebuffer(framebuffer) ? (GLboolean)1 : (GLboolean)0;
         }
 
         public GLboolean IsProgram(uint program)
         {
-            return GL.IsProgram(program) ? E3DEngineInterface.GL2.GL_TRUE : E3DEngineInterface.GL2.GL_FALSE;
+            return GL.IsProgram(program) ? (GLboolean)1 : (GLboolean)0;
         }
 
         public GLboolean IsRenderbuffer(uint renderbuffer)
         {
-            return GL.IsRenderbuffer(renderbuffer) ? E3DEngineInterface.GL2.GL_TRUE : E3DEngineInterface.GL2.GL_FALSE;
+            return GL.IsRenderbuffer(renderbuffer) ? (GLboolean)1 : (GLboolean)0;
         }
 
         public GLboolean IsShader(uint shader)
         {
-            return GL.IsShader(shader) ? E3DEngineInterface.GL2.GL_TRUE : E3DEngineInterface.GL2.GL_FALSE;
+            return GL.IsShader(shader) ? (GLboolean)1 : (GLboolean)0;
         }
 
         public GLboolean IsTexture(uint texture)
         {
-            return GL.IsTexture(texture) ? E3DEngineInterface.GL2.GL_TRUE : E3DEngineInterface.GL2.GL_FALSE;
+            return GL.IsTexture(texture) ? (GLboolean)1 : (GLboolean)0;
         }
 
         public void LineWidth(float width)

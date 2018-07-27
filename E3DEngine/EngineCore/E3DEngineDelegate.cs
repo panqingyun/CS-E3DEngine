@@ -1,4 +1,4 @@
-﻿using E3DEngineInterface;
+﻿using E3DEngineCommon;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +16,41 @@ namespace E3DEngine
 
     public class EngineDelegate : Singleton<EngineDelegate>
     {
+        private bool mbIsInited = false;
+        private bool mbPause = false;
+
         public RenderSystem RenderSystem
         {
             get;set;
+        }
+        
+        public void Initilize()
+        {
+            if(mbIsInited)
+            {
+                return;
+            }
+            Application.Initialize();
+            mbIsInited = true;
+        }
+
+        public void Update(float deltaTime)
+        {
+            if (!mbPause)
+            {
+                return;
+            }
+            Application.UpdateApp(deltaTime);
+        }
+
+        public void Destory()
+        {
+            Application.Destory();
+        }
+
+        public void SetEnginePause(bool bPause)
+        {
+            mbPause = bPause;
         }
     }
 }

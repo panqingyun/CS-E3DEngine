@@ -76,13 +76,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MaterialManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RenderManager.cs" />
     <Compile Include="RenderSystem.cs" />
+    <Compile Include="TextureDataManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\E3DInterface\E3DInterface.csproj">
+    <ProjectReference Include="..\E3DInterface\E3DCommon.csproj">
       <Project>{1c36bb7d-31b7-4872-b61b-753f9003c16b}</Project>
-      <Name>E3DInterface</Name>
+      <Name>E3DCommon</Name>
     </ProjectReference>
     <ProjectReference Include="..\GLLibrary\GLLibraryImporter.csproj">
       <Project>{2b6f67e1-43ac-4708-bebd-193826561fea}</Project>

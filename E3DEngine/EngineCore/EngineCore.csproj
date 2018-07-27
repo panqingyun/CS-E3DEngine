@@ -77,13 +77,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="E3DEngineDelegate.cs" />
+    <Compile Include="E3DEngine\Application.cs" />
+    <Compile Include="E3DEngine\Camera.cs" />
+    <Compile Include="E3DEngine\Collider.cs" />
+    <Compile Include="E3DEngine\Component.cs" />
+    <Compile Include="E3DEngine\Debug.cs" />
+    <Compile Include="E3DEngine\EMath.cs" />
+    <Compile Include="E3DEngine\GameObject.cs" />
+    <Compile Include="E3DEngine\InnerObject.cs" />
+    <Compile Include="E3DEngine\Light.cs" />
+    <Compile Include="E3DEngine\Material.cs" />
+    <Compile Include="E3DEngine\Matrix.cs" />
+    <Compile Include="E3DEngine\Mesh.cs" />
+    <Compile Include="E3DEngine\Object.cs" />
+    <Compile Include="E3DEngine\ParticleSystem.cs" />
+    <Compile Include="E3DEngine\Quaternion.cs" />
+    <Compile Include="E3DEngine\Render.cs" />
+    <Compile Include="E3DEngine\Resource.cs" />
+    <Compile Include="E3DEngine\RigidBody.cs" />
+    <Compile Include="E3DEngine\Scene.cs" />
+    <Compile Include="E3DEngine\Terrain.cs" />
+    <Compile Include="E3DEngine\Transform.cs" />
+    <Compile Include="E3DEngine\Vector.cs" />
+    <Compile Include="E3DUtils.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Singleton.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\E3DInterface\E3DInterface.csproj">
+    <ProjectReference Include="..\E3DInterface\E3DCommon.csproj">
       <Project>{1c36bb7d-31b7-4872-b61b-753f9003c16b}</Project>
-      <Name>E3DInterface</Name>
+      <Name>E3DCommon</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

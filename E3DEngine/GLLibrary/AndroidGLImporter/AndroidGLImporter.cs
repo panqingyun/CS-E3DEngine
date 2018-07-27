@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using OpenTK.Graphics.ES20;
 using GLbyte = System.Byte;
 using GLboolean = System.Byte;
-using E3DEngineInterface;
+using E3DEngineCommon;
 using System.Runtime.InteropServices;
 
 namespace AndroidGL
@@ -190,7 +190,7 @@ namespace AndroidGL
 
         public void DepthMask(byte flag)
         {
-            GL.DepthMask(flag == GL2.GL_TRUE );
+            GL.DepthMask(flag == 1 );
         }
 
         public void DepthRange(float zNear, float zFar)
@@ -397,7 +397,7 @@ namespace AndroidGL
             bool[] parms = new bool[param.Length];
             for (int i = 0; i < param.Length; i++)
             {
-                parms[i] = param[i] == GL2.GL_TRUE;
+                parms[i] = param[i] == 1;
             }
             GL.GetBoolean((All)pname, parms);
         }
@@ -584,37 +584,37 @@ namespace AndroidGL
 
         public GLboolean IsBuffer(uint buffer)
         {
-            return GL.IsBuffer(buffer) ? GL2.GL_TRUE : GL2.GL_FALSE;
+            return GL.IsBuffer(buffer) ? (GLboolean)1 : (GLboolean)0;
         }
 
         public GLboolean IsEnabled(uint cap)
         {
-            return GL.IsEnabled((All)cap) ? GL2.GL_TRUE : GL2.GL_FALSE;
+            return GL.IsEnabled((All)cap) ? (GLboolean)1 : (GLboolean)0;
         }
 
         public GLboolean IsFramebuffer(uint framebuffer)
         {
-            return GL.IsFramebuffer(framebuffer) ? GL2.GL_TRUE : GL2.GL_FALSE;
+            return GL.IsFramebuffer(framebuffer) ? (GLboolean)1 : (GLboolean)0;
         }
 
         public GLboolean IsProgram(uint program)
         {
-            return GL.IsProgram(program) ? GL2.GL_TRUE : GL2.GL_FALSE;
+            return GL.IsProgram(program) ? (GLboolean)1 : (GLboolean)0;
         }
 
         public GLboolean IsRenderbuffer(uint renderbuffer)
         {
-            return GL.IsRenderbuffer(renderbuffer) ? GL2.GL_TRUE : GL2.GL_FALSE;
+            return GL.IsRenderbuffer(renderbuffer) ? (GLboolean)1 : (GLboolean)0;
         }
 
         public GLboolean IsShader(uint shader)
         {
-            return GL.IsShader(shader) ? GL2.GL_TRUE : GL2.GL_FALSE;
+            return GL.IsShader(shader) ? (GLboolean)1 : (GLboolean)0;
         }
 
         public GLboolean IsTexture(uint texture)
         {
-            return GL.IsTexture(texture) ? GL2.GL_TRUE : GL2.GL_FALSE;
+            return GL.IsTexture(texture) ? (GLboolean)1 : (GLboolean)0;
         }
 
         public void LineWidth(float width)
