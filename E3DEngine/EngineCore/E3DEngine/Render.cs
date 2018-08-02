@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace E3DEngine
 {
@@ -120,7 +117,12 @@ namespace E3DEngine
         TopMost,
     }
 
-    public class Renderer : Object
+    public class RenderObject : E3DEngineCommon.Object
+    {
+
+    }
+
+    public class Renderer : RenderObject
     {
        
         public Material Material

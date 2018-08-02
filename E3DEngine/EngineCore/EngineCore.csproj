@@ -89,7 +89,6 @@
     <Compile Include="E3DEngine\Material.cs" />
     <Compile Include="E3DEngine\Matrix.cs" />
     <Compile Include="E3DEngine\Mesh.cs" />
-    <Compile Include="E3DEngine\Object.cs" />
     <Compile Include="E3DEngine\ParticleSystem.cs" />
     <Compile Include="E3DEngine\Quaternion.cs" />
     <Compile Include="E3DEngine\Render.cs" />

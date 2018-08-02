@@ -10,6 +10,53 @@ namespace E3DEngine
 {
     public class Scene : Object
     {
+        private uint mObjectID;
+        private GameObject mRootObject;
+        private DirectionLight mUsedDirectionLight;
+        private List<Camera> mCameraList = new List<Camera>();
+        private Dictionary<uint, Light> mLightsMap = new Dictionary<uint, Light>();
+        private Dictionary<uint, RenderObject> mRendersMap = new Dictionary<uint, RenderObject>();
+        private Dictionary<uint, E3DEngineCommon.Object> mObjMap = new Dictionary<uint, E3DEngineCommon.Object>();
 
+        public Scene()
+        {
+
+        }
+
+        ~Scene()
+        {
+
+        }
+
+        public void Create(string filePath)
+        {
+
+        }
+
+        public void Update(float deltaTime)
+        {
+
+        }
+
+        public void Destory()
+        {
+
+        }
+
+        public void DestoryAllObjectImmediately()
+        {
+
+        }
+
+        public void RenderScene()
+        {
+
+        }
+
+        public void ChangeRenderIndex(uint id, eRenderIndex index)
+        {
+
+        }
     }
+
 }

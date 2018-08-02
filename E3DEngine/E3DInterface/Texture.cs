@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OpenGL.ES20
+namespace E3DEngineCommon
 {
-    class gl2platform
+    public class Texture
     {
     }
 }

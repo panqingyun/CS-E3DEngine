@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -284,12 +285,25 @@ namespace E3DEngine
         }
     }
 
+    [StructLayoutAttribute(LayoutKind.Explicit, Pack = 1)]
     public struct Vector4
     {
+        [FieldOffset(0)]
         public float x;
+        [FieldOffset(0)]
+        public float r;
+        [FieldOffset(4)]
         public float y;
+        [FieldOffset(4)]
+        public float g;
+        [FieldOffset(8)]
         public float z;
+        [FieldOffset(8)]
+        public float b;
+        [FieldOffset(12)]
         public float w;
+        [FieldOffset(12)]
+        public float a;
 
         public Vector4(float _x, float _y, float _z, float _w)
         {
@@ -297,6 +311,10 @@ namespace E3DEngine
             y = _y;
             z = _z;
             w = _w;
+            r = _x;
+            g = _y;
+            b = _z;
+            a = _w;
         }
         public void SetValue(float _x, float _y, float _z, float _w)
         {
@@ -304,6 +322,10 @@ namespace E3DEngine
             y = _y;
             z = _z;
             w = _w;
+            r = _x;
+            g = _y;
+            b = _z;
+            a = _w;
         }
 
         public float Length()

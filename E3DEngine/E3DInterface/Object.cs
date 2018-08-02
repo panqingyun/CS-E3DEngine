@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
-using E3DEngineCommon;
 
-namespace E3DEngine
+namespace E3DEngineCommon
 {
     public enum ObjectType
     {

@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 namespace E3DEngine
 {
 
-    public class GameObject : Object
+    public class GameObject : E3DEngineCommon.Object
     {
         private Renderer mRenderer;
 

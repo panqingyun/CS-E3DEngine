@@ -8,7 +8,7 @@ namespace WindowsPlayer
 {
     public partial class MainWindow : Form
     {
-        private GLContext glContext = new GLContext();
+        private glContext mglContext = new glContext();
         private GLESRenderSystem renderSystem = new GLESRenderSystem();
         private long startTime = 0;
         private long endTime = 0;
@@ -21,19 +21,21 @@ namespace WindowsPlayer
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            glContext.InitGLES(this.Handle);
+            mglContext.InitGLES(this.Handle);
             EngineDelegate.Instance.Initilize(); 
             renderSystem.ViewportHeight = this.Height;
             renderSystem.ViewportWidth = this.Width;
-            EngineDelegate.Instance.RenderSystem = renderSystem;
+            EngineDelegate.RenderSystem = renderSystem;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             startTime = DateTime.Now.Ticks / 10000;
-            glContext.UseContext();
+            mglContext.UseContext();
+            renderSystem.BeginFrame();
             EngineDelegate.Instance.Update(deltaTime/1000.0f);
-            glContext.SwapBuffer();
+            renderSystem.EndFrame();
+            mglContext.SwapBuffer();
             endTime = DateTime.Now.Ticks / 10000;
             deltaTime = endTime - startTime;
         }

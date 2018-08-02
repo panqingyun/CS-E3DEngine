@@ -127,6 +127,9 @@ namespace OpenGL.ES20
         [DllImport(glDllName, EntryPoint = "glDeleteFramebuffers")]
         public static extern  void DeleteFramebuffers(GLsizei n, GLuint[] framebuffers);
 
+        [DllImport(glDllName, EntryPoint = "glDeleteFramebuffers")]
+        public static extern void DeleteFramebuffers(GLsizei n, ref GLuint framebuffer);
+
         [DllImport(glDllName, EntryPoint = "glDeleteTextures")]
         public static extern  void DeleteTextures(GLsizei n, GLuint[] textures);
 
@@ -135,6 +138,9 @@ namespace OpenGL.ES20
 
         [DllImport(glDllName, EntryPoint = "glDeleteRenderbuffers")]
         public static extern  void DeleteRenderbuffers(GLsizei n, GLuint[] renderbuffers);
+
+        [DllImport(glDllName, EntryPoint = "glDeleteRenderbuffers")]
+        public static extern void DeleteRenderbuffers(GLsizei n, ref uint renderbuffer);
 
         [DllImport(glDllName, EntryPoint = "glDeleteShader")]
         public static extern  void DeleteShader(GLuint shader);

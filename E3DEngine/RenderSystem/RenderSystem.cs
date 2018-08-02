@@ -10,6 +10,8 @@ namespace E3DEngineRenderSystem
 {
     public class GLESRenderSystem : RenderSystem
     {
+        private FrameBufferObject defaultFrameBuffer;
+
         public override void Initilize()
         {
             base.Initilize();
@@ -24,13 +26,15 @@ namespace E3DEngineRenderSystem
             mMaterialManager.Cleanup();
             mTextureManager.Cleanup();
             mRenderManager.Cleanup();
+            defaultFrameBuffer.Dispose();
         }
 
         public override void BindDefaultBackbuffer()
         {
             base.BindDefaultBackbuffer();
 #if __IOS__
-
+            defaultFrameBuffer.Bind();
+            defaultFrameBuffer.BindRenderBuffer();
 #else
             gl2.BindFramebuffer(gl2.GL_FRAMEBUFFER, 0);
             gl2.Viewport(0, 0, ViewportWidth, ViewportHeight);       
@@ -41,20 +45,15 @@ namespace E3DEngineRenderSystem
         {
             base.BeginFrame();
 #if __IOS__
-
+            BindDefaultBackbuffer();
+            defaultFrameBuffer.Clear();
 #else
             gl2.BindFramebuffer(gl2.GL_FRAMEBUFFER, 0);
             gl2.Viewport(0, 0, ViewportWidth, ViewportHeight);
 #endif
+            gl2.CullFace(gl2.GL_BACK);
         }
-
-        public override void Update(float deltaTime)
-        {
-            base.Update(deltaTime);
-            gl2.ClearColor(0, 0, 1, 0);
-            gl2.Clear(gl2.GL_COLOR_BUFFER_BIT | gl2.GL_DEPTH_BUFFER_BIT | gl2.GL_STENCIL_BUFFER_BIT);
-        }
-
+        
         public override void EndFrame()
         {
             base.EndFrame();
@@ -74,20 +73,27 @@ namespace E3DEngineRenderSystem
             }
             if ((_iclearType & (uint)ClearType.eCT_Depth) != 0)
             {
-                gl2.ClearDepthf(1);
+                gl2.ClearDepth(1);
                 _type |= gl2.GL_DEPTH_BUFFER_BIT;
             }
             if ((_iclearType & (uint)ClearType.eCT_Stencil) != 0)
             {
-                gl2.ClearStencil(1);
+                gl2.ClearStencil(0);
                 _type |= gl2.GL_STENCIL_BUFFER_BIT;
             }
             gl2.Clear(_type);
         }
 
+        public void SetupDefaultFrameBuffer()
+        {
+            defaultFrameBuffer = new FrameBufferObject();
+            defaultFrameBuffer.Create(ViewportWidth, ViewportHeight, RenderTargetType.RENDER_BUFFER);
+        }
+
         public override void Destory()
         {
             base.Destory();
+            defaultFrameBuffer.Dispose();
         }
     }
 

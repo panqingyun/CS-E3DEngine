@@ -2,7 +2,6 @@
 using System.Text;
 
 using GLenum = System.UInt32;
-using GLboolean = System.Byte;
 using GLbitfield = System.UInt32;
 using GLint = System.Int32;
 using GLsizei = System.Int32;
@@ -34,7 +33,12 @@ namespace E3DEngineCommon
                 Marshal.FreeHGlobal(buffer);
             }
         }
+    }
 
+    public class GLCommon
+    {
+        public const GLbyte GL_TRUE = 1;
+        public const GLbyte GL_FALSE = 0;
     }
     
     public interface IOpenGLImporter
@@ -102,20 +106,25 @@ namespace E3DEngineCommon
         void DeleteBuffers(GLsizei n, GLuint[] buffers);
         
         void DeleteFramebuffers(GLsizei n, GLuint[] framebuffers);
-        
+
+        void DeleteFramebuffers(int n, ref GLuint framebuffer);
+
+
         void DeleteTextures(GLsizei n, GLuint[] textures);
         
         void DeleteProgram(GLuint program);
         
         void DeleteRenderbuffers(GLsizei n, GLuint[] renderbuffers);
-        
+
+        void DeleteRenderbuffers(int n, ref uint renderbuffer);
+
         void DeleteShader(GLuint shader);
         
         void DetachShader(GLuint program, GLuint shader);
         
         void DepthFunc(GLenum func);
         
-        void DepthMask(GLboolean flag);
+        void DepthMask(bool flag);
         
         void DepthRange(GLclampf zNear, GLclampf zFar);
         
@@ -193,7 +202,7 @@ namespace E3DEngineCommon
         
         int GetAttribLocation(GLuint program, string name);
         
-        void GetBoolean(GLenum pname, GLboolean[] param);
+        void GetBoolean(GLenum pname, bool[] param);
         
         void GetBufferParameter(GLenum target, GLenum pname, GLint[] param);
         
@@ -267,19 +276,19 @@ namespace E3DEngineCommon
         
         void Hint(GLenum target, GLenum mode);
         
-        GLboolean IsBuffer(GLuint buffer);
+        bool IsBuffer(GLuint buffer);
         
-        GLboolean IsEnabled(GLenum cap);
+        bool IsEnabled(GLenum cap);
         
-        GLboolean IsFramebuffer(GLuint framebuffer);
+        bool IsFramebuffer(GLuint framebuffer);
         
-        GLboolean IsProgram(GLuint program);
+        bool IsProgram(GLuint program);
         
-        GLboolean IsRenderbuffer(GLuint renderbuffer);
+        bool IsRenderbuffer(GLuint renderbuffer);
         
-        GLboolean IsShader(GLuint shader);
+        bool IsShader(GLuint shader);
         
-        GLboolean IsTexture(GLuint texture);
+        bool IsTexture(GLuint texture);
         
         void LineWidth(GLfloat width);
         
@@ -295,7 +304,7 @@ namespace E3DEngineCommon
         
         void RenderbufferStorage(GLenum target, GLenum internalformat, GLsizei width, GLsizei height);
         
-        void SampleCoverage(GLclampf value, GLboolean invert);
+        void SampleCoverage(GLclampf value, bool invert);
         
         void Scissor(GLint x, GLint y, GLsizei width, GLsizei height);
         

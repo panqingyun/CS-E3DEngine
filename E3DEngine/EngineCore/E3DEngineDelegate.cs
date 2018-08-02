@@ -19,7 +19,7 @@ namespace E3DEngine
         private bool mbIsInited = false;
         private bool mbPause = false;
 
-        public RenderSystem RenderSystem
+        public static RenderSystem RenderSystem
         {
             get;set;
         }
@@ -36,13 +36,13 @@ namespace E3DEngine
 
         public void Update(float deltaTime)
         {
-            if (!mbPause)
+            if (mbPause)
             {
                 return;
             }
             Application.UpdateApp(deltaTime);
         }
-
+            
         public void Destory()
         {
             Application.Destory();

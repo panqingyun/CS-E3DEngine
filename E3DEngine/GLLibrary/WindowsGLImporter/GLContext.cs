@@ -12,7 +12,7 @@ using System.Diagnostics;
 
 namespace WindowsGL
 {
-    public class GLContext
+    public class glContext
     {
         private EGLConfig config;
         private EGLint majorVersion;

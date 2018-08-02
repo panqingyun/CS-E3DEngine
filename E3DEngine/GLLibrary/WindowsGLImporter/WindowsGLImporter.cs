@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using OpenGL.ES20;
 
-using GLboolean = System.Byte;
 using E3DEngineCommon;
 
 namespace WindowsGL
@@ -157,6 +153,11 @@ namespace WindowsGL
             GL.DeleteBuffers(n, buffers);
         }
 
+        public void DeleteFramebuffers(int n, ref uint framebuffer)
+        {
+            GL.DeleteFramebuffers(n, ref framebuffer);
+        }
+
         public void DeleteFramebuffers(int n, uint[] framebuffers)
         {
             GL.DeleteFramebuffers(n, framebuffers);
@@ -165,6 +166,11 @@ namespace WindowsGL
         public void DeleteProgram(uint program)
         {
             GL.DeleteProgram(program);
+        }
+
+        public void DeleteRenderbuffers(int n, ref uint renderbuffer)
+        {
+            GL.DeleteRenderbuffers(n, ref renderbuffer);
         }
 
         public void DeleteRenderbuffers(int n, uint[] renderbuffers)
@@ -187,9 +193,9 @@ namespace WindowsGL
             GL.DepthFunc(func);
         }
 
-        public void DepthMask(byte flag)
+        public void DepthMask(bool flag)
         {
-            GL.DepthMask(flag);
+            GL.DepthMask(flag ? GLCommon.GL_TRUE : GLCommon.GL_FALSE);
         }
 
         public void DepthRange(float zNear, float zFar)
@@ -381,9 +387,14 @@ namespace WindowsGL
             return GL.GetAttribLocation(program, name);
         }
 
-        public void GetBoolean(uint pname, byte[] param)
+        public void GetBoolean(uint pname, bool[] param)
         {
-            GL.GetBoolean(pname, param);
+            byte[] parms = new byte[param.Length];
+            GL.GetBoolean(pname, parms);
+            for (int i = 0; i < parms.Length; i++)
+            {
+                param[i] = parms[i] == GLCommon.GL_TRUE;
+            }
         }
 
         public void GetBufferParameter(uint target, uint pname, int[] param)
@@ -566,39 +577,39 @@ namespace WindowsGL
             GL.Hint(target, mode);
         }
 
-        public GLboolean IsBuffer(uint buffer)
+        public bool IsBuffer(uint buffer)
         {
-            return GL.IsBuffer(buffer);
+            return GL.IsBuffer(buffer) == GLCommon.GL_TRUE;
         }
 
-        public GLboolean IsEnabled(uint cap)
+        public bool IsEnabled(uint cap)
         {
-            return GL.IsEnabled(cap);
+            return GL.IsEnabled(cap) == GLCommon.GL_TRUE;
         }
 
-        public GLboolean IsFramebuffer(uint framebuffer)
+        public bool IsFramebuffer(uint framebuffer)
         {
-            return GL.IsFramebuffer(framebuffer);
+            return GL.IsFramebuffer(framebuffer) == GLCommon.GL_TRUE;
         }
 
-        public GLboolean IsProgram(uint program)
+        public bool IsProgram(uint program)
         {
-            return GL.IsProgram(program);
+            return GL.IsProgram(program) == GLCommon.GL_TRUE;
         }
 
-        public GLboolean IsRenderbuffer(uint renderbuffer)
+        public bool IsRenderbuffer(uint renderbuffer)
         {
-            return GL.IsRenderbuffer(renderbuffer);
+            return GL.IsRenderbuffer(renderbuffer) == GLCommon.GL_TRUE;
         }
 
-        public GLboolean IsShader(uint shader)
+        public bool IsShader(uint shader)
         {
-            return GL.IsShader(shader);
+            return GL.IsShader(shader) == GLCommon.GL_TRUE;
         }
 
-        public GLboolean IsTexture(uint texture)
+        public bool IsTexture(uint texture)
         {
-            return GL.IsTexture(texture);
+            return GL.IsTexture(texture) == GLCommon.GL_TRUE;
         }
 
         public void LineWidth(float width)
@@ -636,9 +647,9 @@ namespace WindowsGL
             GL.RenderbufferStorage(target, internalformat, width, height);
         }
 
-        public void SampleCoverage(float value, byte invert)
+        public void SampleCoverage(float value, bool invert)
         {
-            throw new NotImplementedException();
+            GL.SampleCoverage(value, invert ? GLCommon.GL_TRUE : GLCommon.GL_FALSE);
         }
 
         public void Scissor(int x, int y, int width, int height)

@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using OpenTK.Graphics.ES20;
-using GLbyte = System.Byte;
-using GLboolean = System.Byte;
 using E3DEngineCommon;
-using System.Runtime.InteropServices;
 
 namespace AndroidGL
 {
@@ -158,6 +152,11 @@ namespace AndroidGL
             GL.DeleteBuffers(n, buffers);
         }
 
+        public void DeleteFramebuffers(int n, ref uint framebuffer)
+        {
+            GL.DeleteFramebuffers(n, ref framebuffer);
+        }
+
         public void DeleteFramebuffers(int n, uint[] framebuffers)
         {
             GL.DeleteFramebuffers(n, framebuffers);
@@ -166,6 +165,11 @@ namespace AndroidGL
         public void DeleteProgram(uint program)
         {
             GL.DeleteProgram(program);
+        }
+
+        public void DeleteRenderbuffers(int n, ref uint renderbuffer)
+        {
+            GL.DeleteRenderbuffers(n, ref renderbuffer);
         }
 
         public void DeleteRenderbuffers(int n, uint[] renderbuffers)
@@ -188,9 +192,9 @@ namespace AndroidGL
             GL.DepthFunc((All)func);
         }
 
-        public void DepthMask(byte flag)
+        public void DepthMask(bool flag)
         {
-            GL.DepthMask(flag == 1 );
+            GL.DepthMask(flag);
         }
 
         public void DepthRange(float zNear, float zFar)
@@ -392,14 +396,9 @@ namespace AndroidGL
             return GL.GetAttribLocation(program, name);
         }
 
-        public void GetBoolean(uint pname, byte[] param)
+        public void GetBoolean(uint pname, bool[] param)
         {
-            bool[] parms = new bool[param.Length];
-            for (int i = 0; i < param.Length; i++)
-            {
-                parms[i] = param[i] == 1;
-            }
-            GL.GetBoolean((All)pname, parms);
+            GL.GetBoolean((All)pname, param);
         }
 
         public void GetBufferParameter(uint target, uint pname, int[] param)
@@ -582,39 +581,39 @@ namespace AndroidGL
             GL.Hint((All)target, (All)mode);
         }
 
-        public GLboolean IsBuffer(uint buffer)
+        public bool IsBuffer(uint buffer)
         {
-            return GL.IsBuffer(buffer) ? (GLboolean)1 : (GLboolean)0;
+            return GL.IsBuffer(buffer) ;
         }
 
-        public GLboolean IsEnabled(uint cap)
+        public bool IsEnabled(uint cap)
         {
-            return GL.IsEnabled((All)cap) ? (GLboolean)1 : (GLboolean)0;
+            return GL.IsEnabled((All)cap) ;
         }
 
-        public GLboolean IsFramebuffer(uint framebuffer)
+        public bool IsFramebuffer(uint framebuffer)
         {
-            return GL.IsFramebuffer(framebuffer) ? (GLboolean)1 : (GLboolean)0;
+            return GL.IsFramebuffer(framebuffer) ;
         }
 
-        public GLboolean IsProgram(uint program)
+        public bool IsProgram(uint program)
         {
-            return GL.IsProgram(program) ? (GLboolean)1 : (GLboolean)0;
+            return GL.IsProgram(program) ;
         }
 
-        public GLboolean IsRenderbuffer(uint renderbuffer)
+        public bool IsRenderbuffer(uint renderbuffer)
         {
-            return GL.IsRenderbuffer(renderbuffer) ? (GLboolean)1 : (GLboolean)0;
+            return GL.IsRenderbuffer(renderbuffer) ;
         }
 
-        public GLboolean IsShader(uint shader)
+        public bool IsShader(uint shader)
         {
-            return GL.IsShader(shader) ? (GLboolean)1 : (GLboolean)0;
+            return GL.IsShader(shader) ;
         }
 
-        public GLboolean IsTexture(uint texture)
+        public bool IsTexture(uint texture)
         {
-            return GL.IsTexture(texture) ? (GLboolean)1 : (GLboolean)0;
+            return GL.IsTexture(texture) ;
         }
 
         public void LineWidth(float width)
@@ -652,9 +651,9 @@ namespace AndroidGL
             GL.RenderbufferStorage((All)target, (All)internalformat, width, height);
         }
 
-        public void SampleCoverage(float value, byte invert)
+        public void SampleCoverage(float value, bool invert)
         {
-            throw new NotImplementedException();
+            GL.SampleCoverage(value, invert);
         }
 
         public void Scissor(int x, int y, int width, int height)
