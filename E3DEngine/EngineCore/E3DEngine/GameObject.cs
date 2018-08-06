@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
+using E3DEngineRuntime;
 
 namespace E3DEngine
 {
 
-    public class GameObject : E3DEngineCommon.Object
+    public class GameObject : E3DEngineRuntime.Object, IDisposable
     {
         private Renderer mRenderer;
 
@@ -27,15 +28,14 @@ namespace E3DEngine
             get;
             set;
         }
-
-        public Vector3 Position
-        {
-            get; set;
-        }
-
+        
         private Dictionary<string, List<Component>> component_dic = new Dictionary<string, List<Component>>();
 
-        public Transform Transform;
+        public Transform Transform
+        {
+            get;
+            set;
+        }
 
         public GameObject()
         {
@@ -68,7 +68,12 @@ namespace E3DEngine
         
         public static void Destory(GameObject go)
         {
-            go = null;
+            go.Dispose();
+        }
+
+        public virtual void Dispose()
+        {
+            
         }
     }
 }

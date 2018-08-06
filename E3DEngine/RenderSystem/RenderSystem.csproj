@@ -85,9 +85,9 @@
     <Compile Include="TextureDataManager.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\E3DInterface\E3DCommon.csproj">
+    <ProjectReference Include="..\E3DInterface\E3DRuntime.csproj">
       <Project>{1c36bb7d-31b7-4872-b61b-753f9003c16b}</Project>
-      <Name>E3DCommon</Name>
+      <Name>E3DRuntime</Name>
     </ProjectReference>
     <ProjectReference Include="..\GLLibrary\GLLibraryImporter.csproj">
       <Project>{2b6f67e1-43ac-4708-bebd-193826561fea}</Project>

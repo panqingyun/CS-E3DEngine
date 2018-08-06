@@ -33,6 +33,7 @@ namespace WindowsPlayer
             startTime = DateTime.Now.Ticks / 10000;
             mglContext.UseContext();
             renderSystem.BeginFrame();
+            renderSystem.ClearColor(0, 0, 1, 1, E3DEngineRuntime.ClearType.eCT_Color);
             EngineDelegate.Instance.Update(deltaTime/1000.0f);
             renderSystem.EndFrame();
             mglContext.SwapBuffer();

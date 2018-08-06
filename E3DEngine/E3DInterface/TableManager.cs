@@ -9,7 +9,7 @@ using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace E3DEngineCommon
+namespace E3DEngineRuntime
 {
     public enum Condition
     {

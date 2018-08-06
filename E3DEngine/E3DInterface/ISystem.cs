@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace E3DEngineCommon
+namespace E3DEngineRuntime
 {
     public interface ISystem
     {

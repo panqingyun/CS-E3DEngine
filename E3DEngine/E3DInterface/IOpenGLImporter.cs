@@ -15,26 +15,8 @@ using GLintptr = System.Int32;
 using GLsizeiptr = System.Int32;
 using System.Runtime.InteropServices;
 
-namespace E3DEngineCommon
+namespace E3DEngineRuntime
 {
-    public class Tools
-    {
-        public static IntPtr BytesToIntptr(byte[] bytes)
-        {
-            int size = bytes.Length;
-            IntPtr buffer = Marshal.AllocHGlobal(size);
-            try
-            {
-                Marshal.Copy(bytes, 0, buffer, size);
-                return buffer;
-            }
-            finally
-            {
-                Marshal.FreeHGlobal(buffer);
-            }
-        }
-    }
-
     public class GLCommon
     {
         public const GLbyte GL_TRUE = 1;

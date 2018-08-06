@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 using OpenTK.Graphics.ES20;
-using E3DEngineCommon;
+using E3DEngineRuntime;
 
 namespace AndroidGL
 {

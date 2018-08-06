@@ -80,9 +80,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\E3DInterface\E3DCommon.csproj">
+    <ProjectReference Include="..\E3DInterface\E3DRuntime.csproj">
       <Project>{1c36bb7d-31b7-4872-b61b-753f9003c16b}</Project>
-      <Name>E3DCommon</Name>
+      <Name>E3DRuntime</Name>
     </ProjectReference>
     <ProjectReference Include="AndroidGLImporter\AndroidGLImporter.csproj">
       <Project>{48908916-a1f6-4156-b197-b4b88b7faf98}</Project>

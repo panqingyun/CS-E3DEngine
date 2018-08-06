@@ -1,4 +1,5 @@
-﻿using System;
+﻿using E3DEngineRuntime;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -8,7 +9,7 @@ using System.Xml;
 
 namespace E3DEngine
 {
-    public class Scene : Object
+    public class Scene : E3DEngineRuntime.Object
     {
         private uint mObjectID;
         private GameObject mRootObject;
@@ -16,7 +17,7 @@ namespace E3DEngine
         private List<Camera> mCameraList = new List<Camera>();
         private Dictionary<uint, Light> mLightsMap = new Dictionary<uint, Light>();
         private Dictionary<uint, RenderObject> mRendersMap = new Dictionary<uint, RenderObject>();
-        private Dictionary<uint, E3DEngineCommon.Object> mObjMap = new Dictionary<uint, E3DEngineCommon.Object>();
+        private Dictionary<uint, E3DEngineRuntime.Object> mObjMap = new Dictionary<uint, E3DEngineRuntime.Object>();
 
         public Scene()
         {

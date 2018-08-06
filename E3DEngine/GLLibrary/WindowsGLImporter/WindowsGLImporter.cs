@@ -2,7 +2,7 @@
 using System.Text;
 using OpenGL.ES20;
 
-using E3DEngineCommon;
+using E3DEngineRuntime;
 
 namespace WindowsGL
 {
@@ -105,7 +105,10 @@ namespace WindowsGL
 
         public void ColorMask(bool red, bool green, bool blue, bool alpha)
         {
-            GL.ColorMask(red ? (byte)1 : (byte)0, green ? (byte)1 : (byte)0, blue ? (byte)1 : (byte)0, alpha ? (byte)1 : (byte)0);
+            GL.ColorMask(   red     ? GLCommon.GL_TRUE : GLCommon.GL_FALSE,
+                            green   ? GLCommon.GL_TRUE : GLCommon.GL_FALSE,
+                            blue    ? GLCommon.GL_TRUE : GLCommon.GL_FALSE,
+                            alpha   ? GLCommon.GL_TRUE : GLCommon.GL_FALSE);
         }
 
         public void CompileShader(uint shader)

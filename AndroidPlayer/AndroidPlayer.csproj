@@ -88,13 +88,13 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\E3DEngine\E3DInterface\E3DCommon.csproj">
+    <ProjectReference Include="..\E3DEngine\E3DInterface\E3DRuntime.csproj">
       <Project>{1c36bb7d-31b7-4872-b61b-753f9003c16b}</Project>
-      <Name>E3DCommon</Name>
+      <Name>E3DRuntime</Name>
     </ProjectReference>
-    <ProjectReference Include="..\E3DEngine\EngineCore\EngineCore.csproj">
+    <ProjectReference Include="..\E3DEngine\EngineCore\E3DEngine.csproj">
       <Project>{b6ac7a66-6fd8-4476-9d8f-80b2cd472947}</Project>
-      <Name>EngineCore</Name>
+      <Name>E3DEngine</Name>
     </ProjectReference>
     <ProjectReference Include="..\E3DEngine\RenderSystem\RenderSystem.csproj">
       <Project>{A50AE244-E50D-4073-A069-E4A606B62218}</Project>

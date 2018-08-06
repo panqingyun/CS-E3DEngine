@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.CompilerServices;
 
-namespace E3DEngineCommon
+namespace E3DEngineRuntime
 {
     public enum ObjectType
     {

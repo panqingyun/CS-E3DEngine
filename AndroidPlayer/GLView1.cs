@@ -27,7 +27,7 @@ namespace AndroidPlayer
             Run();
             renderSystem.ViewportWidth = this.Width;
             renderSystem.ViewportHeight = this.Height;
-            E3DEngineCommon.EngineDelegate.Instance.RenderSystem = renderSystem;
+            E3DEngineRuntime.EngineDelegate.Instance.RenderSystem = renderSystem;
         }
 
         // This method is called everytime the context needs

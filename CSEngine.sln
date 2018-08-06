@@ -22,11 +22,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IOSPlayer", "IOSPlayer\IOSP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GLLibraryImporter", "E3DEngine\GLLibrary\GLLibraryImporter.csproj", "{2B6F67E1-43AC-4708-BEBD-193826561FEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngineCore", "E3DEngine\EngineCore\EngineCore.csproj", "{B6AC7A66-6FD8-4476-9D8F-80B2CD472947}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E3DEngine", "E3DEngine\EngineCore\E3DEngine.csproj", "{B6AC7A66-6FD8-4476-9D8F-80B2CD472947}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RenderSystem", "E3DEngine\RenderSystem\RenderSystem.csproj", "{A50AE244-E50D-4073-A069-E4A606B62218}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E3DCommon", "E3DEngine\E3DInterface\E3DCommon.csproj", "{1C36BB7D-31B7-4872-B61B-753F9003C16B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E3DRuntime", "E3DEngine\E3DInterface\E3DRuntime.csproj", "{1C36BB7D-31B7-4872-B61B-753F9003C16B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidGLImporter", "E3DEngine\GLLibrary\AndroidGLImporter\AndroidGLImporter.csproj", "{48908916-A1F6-4156-B197-B4B88B7FAF98}"
 EndProject

@@ -4,7 +4,7 @@ using OpenTK.Graphics.ES20;
 
 namespace IOSGL
 {
-    public class IOSGLImporter : E3DEngineCommon.IOpenGLImporter
+    public class IOSGLImporter : E3DEngineRuntime.IOpenGLImporter
     {
         public void ActiveTexture(uint texture)
         {

@@ -727,7 +727,7 @@ namespace E3DEngine
         public float Det()
         {
 
-            return  + this[3, 0] * this[2, 1] * this[1, 2] * this[0, 3] - this[2, 0] * this[3, 1] * this[1, 2] * this[0, 3]
+            return   this[3, 0] * this[2, 1] * this[1, 2] * this[0, 3] - this[2, 0] * this[3, 1] * this[1, 2] * this[0, 3]
                     - this[3, 0] * this[1, 1] * this[2, 2] * this[0, 3] + this[1, 0] * this[3, 1] * this[2, 2] * this[0, 3]
                     + this[2, 0] * this[1, 1] * this[3, 2] * this[0, 3] - this[1, 0] * this[2, 1] * this[3, 2] * this[0, 3]
                     - this[3, 0] * this[2, 1] * this[0, 2] * this[1, 3] + this[2, 0] * this[3, 1] * this[0, 2] * this[1, 3]
@@ -749,52 +749,52 @@ namespace E3DEngine
         {
             Matrix4x4 ret = new Matrix4x4();
 
-            ret[0, 0] = +this[2, 1] *this[3, 2] * this[1, 3] - this[3, 1] * this[2, 2] * this[1, 3] + this[3, 1] * this[1, 2] * this[2, 3]
+            ret[0, 0] = this[2, 1] *this[3, 2] * this[1, 3] - this[3, 1] * this[2, 2] * this[1, 3] + this[3, 1] * this[1, 2] * this[2, 3]
                     -this[1, 1] *this[3, 2] *this[2, 3] - this[2, 1] * this[1, 2] * this[3, 3] + this[1, 1] * this[2, 2] * this[3, 3];
 
-            ret[1, 0] = +this[3, 0] * this[2, 2] * this[1, 3] - this[2, 0] * this[3, 2] * this[1, 3] - this[3, 0] * this[1, 2] * this[2, 3]
+            ret[1, 0] = this[3, 0] * this[2, 2] * this[1, 3] - this[2, 0] * this[3, 2] * this[1, 3] - this[3, 0] * this[1, 2] * this[2, 3]
                      + this[1, 0] * this[3, 2] * this[2, 3] + this[2, 0] * this[1, 2] * this[3, 3] - this[1, 0] * this[2, 2] * this[3, 3];
 
-            ret[2, 0] = +this[2, 0] * this[3, 1] * this[1, 3] - this[3, 0] * this[2, 1] * this[1, 3] + this[3, 0] * this[1, 1] * this[2, 3]
+            ret[2, 0] = this[2, 0] * this[3, 1] * this[1, 3] - this[3, 0] * this[2, 1] * this[1, 3] + this[3, 0] * this[1, 1] * this[2, 3]
                     - this[1, 0] * this[3, 1] * this[2, 3] - this[2, 0] * this[1, 1] * this[3, 3] + this[1, 0] * this[2, 1] * this[3, 3];
 
-            ret[3, 0] = +this[3, 0] * this[2, 1] * this[1, 2] - this[2, 0] * this[3, 1] * this[1, 2] - this[3, 0] * this[1, 1] * this[2, 2]
+            ret[3, 0] = this[3, 0] * this[2, 1] * this[1, 2] - this[2, 0] * this[3, 1] * this[1, 2] - this[3, 0] * this[1, 1] * this[2, 2]
                     + this[1, 0] * this[3, 1] * this[2, 2] + this[2, 0] * this[1, 1] * this[3, 2] - this[1, 0] * this[2, 1] * this[3, 2];
 
-            ret[0, 1] = +this[3, 1] * this[2, 2] * this[0, 3] - this[2, 1] * this[3, 2] * this[0, 3] - this[3, 1] * this[0, 2] * this[2, 3]
+            ret[0, 1] = this[3, 1] * this[2, 2] * this[0, 3] - this[2, 1] * this[3, 2] * this[0, 3] - this[3, 1] * this[0, 2] * this[2, 3]
                     + this[0, 1] * this[3, 2] * this[2, 3] + this[2, 1] * this[0, 2] * this[3, 3] - this[0, 1] * this[2, 2] * this[3, 3];
 
-            ret[1, 1] = +this[2, 0] * this[3, 2] * this[0, 3] - this[3, 0] * this[2, 2] * this[0, 3] + this[3, 0] * this[0, 2] * this[2, 3]
+            ret[1, 1] = this[2, 0] * this[3, 2] * this[0, 3] - this[3, 0] * this[2, 2] * this[0, 3] + this[3, 0] * this[0, 2] * this[2, 3]
                     - this[0, 0] * this[3, 2] * this[2, 3] - this[2, 0] * this[0, 2] * this[3, 3] + this[0, 0] * this[2, 2] * this[3, 3];
 
-            ret[2, 1] = +this[3, 0] * this[2, 1] * this[0, 3] - this[2, 0] * this[3, 1] * this[0, 3] - this[3, 0] * this[0, 1] * this[2, 3]
+            ret[2, 1] = this[3, 0] * this[2, 1] * this[0, 3] - this[2, 0] * this[3, 1] * this[0, 3] - this[3, 0] * this[0, 1] * this[2, 3]
                     + this[0, 0] * this[3, 1] * this[2, 3] + this[2, 0] * this[0, 1] * this[3, 3] - this[0, 0] * this[2, 1] * this[3, 3];
 
-            ret[3, 1] = +this[2, 0] * this[3, 1] * this[0, 2] - this[3, 0] * this[2, 1] * this[0, 2] + this[3, 0] * this[0, 1] * this[2, 2]
+            ret[3, 1] = this[2, 0] * this[3, 1] * this[0, 2] - this[3, 0] * this[2, 1] * this[0, 2] + this[3, 0] * this[0, 1] * this[2, 2]
                     - this[0, 0] * this[3, 1] * this[2, 2] - this[2, 0] * this[0, 1] * this[3, 2] + this[0, 0] * this[2, 1] * this[3, 2];
 
-            ret[0, 2] = +this[1, 1] * this[3, 2] * this[0, 3] - this[3, 1] * this[1, 2] * this[0, 3] + this[3, 1] * this[0, 2] * this[1, 3]
+            ret[0, 2] = this[1, 1] * this[3, 2] * this[0, 3] - this[3, 1] * this[1, 2] * this[0, 3] + this[3, 1] * this[0, 2] * this[1, 3]
                     - this[0, 1] * this[3, 2] * this[1, 3] - this[1, 1] * this[0, 2] * this[3, 3] + this[0, 1] * this[1, 2] * this[3, 3];
 
-            ret[1, 2] = +this[3, 0] * this[1, 2] * this[0, 3] - this[1, 0] * this[3, 2] * this[0, 3] - this[3, 0] * this[0, 2] * this[1, 3]
+            ret[1, 2] = this[3, 0] * this[1, 2] * this[0, 3] - this[1, 0] * this[3, 2] * this[0, 3] - this[3, 0] * this[0, 2] * this[1, 3]
                     + this[0, 0] * this[3, 2] * this[1, 3] + this[1, 0] * this[0, 2] * this[3, 3] - this[0, 0] * this[1, 2] * this[3, 3];
 
-            ret[2, 2] = +this[1, 0] * this[3, 1] * this[0, 3] - this[3, 0] * this[1, 1] * this[0, 3] + this[3, 0] * this[0, 1] * this[1, 3]
+            ret[2, 2] = this[1, 0] * this[3, 1] * this[0, 3] - this[3, 0] * this[1, 1] * this[0, 3] + this[3, 0] * this[0, 1] * this[1, 3]
                     - this[0, 0] * this[3, 1] * this[1, 3] - this[1, 0] * this[0, 1] * this[3, 3] + this[0, 0] * this[1, 1] * this[3, 3];
 
-            ret[3, 2] = +this[3, 0] * this[1, 1] * this[0, 2] - this[1, 0] * this[3, 1] * this[0, 2] - this[3, 0] * this[0, 1] * this[1, 2]
+            ret[3, 2] = this[3, 0] * this[1, 1] * this[0, 2] - this[1, 0] * this[3, 1] * this[0, 2] - this[3, 0] * this[0, 1] * this[1, 2]
                     + this[0, 0] * this[3, 1] * this[1, 2] + this[1, 0] * this[0, 1] * this[3, 2] - this[0, 0] * this[1, 1] * this[3, 2];
 
-            ret[0, 3] = +this[2, 1] * this[1, 2] * this[0, 3] - this[1, 1] * this[2, 2] * this[0, 3] - this[2, 1] * this[0, 2] * this[1, 3]
+            ret[0, 3] = this[2, 1] * this[1, 2] * this[0, 3] - this[1, 1] * this[2, 2] * this[0, 3] - this[2, 1] * this[0, 2] * this[1, 3]
                     + this[0, 1] * this[2, 2] * this[1, 3] + this[1, 1] * this[0, 2] * this[2, 3] - this[0, 1] * this[1, 2] * this[2, 3];
 
-            ret[1, 3] = +this[1, 0] * this[2, 2] * this[0, 3] - this[2, 0] * this[1, 2] * this[0, 3] + this[2, 0] * this[0, 2] * this[1, 3]
+            ret[1, 3] = this[1, 0] * this[2, 2] * this[0, 3] - this[2, 0] * this[1, 2] * this[0, 3] + this[2, 0] * this[0, 2] * this[1, 3]
                     - this[0, 0] * this[2, 2] * this[1, 3] - this[1, 0] * this[0, 2] * this[2, 3] + this[0, 0] * this[1, 2] * this[2, 3];
 
-            ret[2, 3] = +this[2, 0] * this[1, 1] * this[0, 3] - this[1, 0] * this[2, 1] * this[0, 3] - this[2, 0] * this[0, 1] * this[1, 3]
+            ret[2, 3] = this[2, 0] * this[1, 1] * this[0, 3] - this[1, 0] * this[2, 1] * this[0, 3] - this[2, 0] * this[0, 1] * this[1, 3]
                     + this[0, 0] * this[2, 1] * this[1, 3] + this[1, 0] * this[0, 1] * this[2, 3] - this[0, 0] * this[1, 1] * this[2, 3];
 
-            ret[3, 3] = +this[1, 0] * this[2, 1] * this[0, 2] - this[2, 0] * this[1, 1] * this[0, 2] + this[2, 0] * this[0, 1] * this[1, 2]
+            ret[3, 3] = this[1, 0] * this[2, 1] * this[0, 2] - this[2, 0] * this[1, 1] * this[0, 2] + this[2, 0] * this[0, 1] * this[1, 2]
                     - this[0, 0] * this[2, 1] * this[1, 2] - this[1, 0] * this[0, 1] * this[2, 2] + this[0, 0] * this[1, 1] * this[2, 2];
 
             return ret / Det();
