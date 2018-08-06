@@ -111,6 +111,10 @@
       <Project>{b6ac7a66-6fd8-4476-9d8f-80b2cd472947}</Project>
       <Name>E3DEngine</Name>
     </ProjectReference>
+    <ProjectReference Include="..\E3DEngine\RenderSystem\gles_renderSystem\GLES_RenderSystem.csproj">
+      <Project>{a50ae244-e50d-4073-a069-e4a606b62218}</Project>
+      <Name>GLES_RenderSystem</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

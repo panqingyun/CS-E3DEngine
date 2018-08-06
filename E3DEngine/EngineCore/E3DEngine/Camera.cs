@@ -99,6 +99,7 @@ namespace E3DEngine
 
         public void Render()
         {
+            Clear();
 
         }
 

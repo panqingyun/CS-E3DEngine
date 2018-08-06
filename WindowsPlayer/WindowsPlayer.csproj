@@ -92,9 +92,9 @@
       <Project>{0ca56357-482a-4978-a298-a95921575387}</Project>
       <Name>WindowsGLImporter</Name>
     </ProjectReference>
-    <ProjectReference Include="..\E3DEngine\RenderSystem\RenderSystem.csproj">
+    <ProjectReference Include="..\E3DEngine\RenderSystem\gles_renderSystem\GLES_RenderSystem.csproj">
       <Project>{a50ae244-e50d-4073-a069-e4a606b62218}</Project>
-      <Name>RenderSystem</Name>
+      <Name>GLES_RenderSystem</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
